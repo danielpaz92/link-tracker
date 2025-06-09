@@ -9,8 +9,18 @@
 defined('ABSPATH') || exit;
 
 // Load internal components
+
+// Load database setup and cleanup logic
 require_once plugin_dir_path(__FILE__) . 'includes/db.php';
+
+// Register the REST API endpoint
 require_once plugin_dir_path(__FILE__) . 'includes/rest-api.php';
+
+// Load admin dashboard UI
+require_once plugin_dir_path(__FILE__) . 'admin/admin-page.php';
+
+// Load custom utilities and manual test hooks
+require_once plugin_dir_path(__FILE__) . 'includes/functions.php';
 
 // Create the DB table when the plugin is activated
 register_activation_hook(__FILE__, 'atflt_activate_plugin');

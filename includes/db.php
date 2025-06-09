@@ -22,3 +22,17 @@ function atflt_create_table() {
 	require_once ABSPATH . 'wp-admin/includes/upgrade.php';
 	dbDelta($sql);
 }
+
+/**
+ * Deletes records older than 7 days from the database.
+ */
+function atflt_cleanup_old_records() {
+	global $wpdb;
+	$table = $wpdb->prefix . 'atflt_visits';
+
+	$wpdb->query(
+		$wpdb->prepare(
+			"DELETE FROM $table WHERE timestamp < NOW() - INTERVAL 7 DAY"
+		)
+	);
+}
