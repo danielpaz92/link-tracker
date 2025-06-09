@@ -41,3 +41,9 @@ add_action('wp_enqueue_scripts', function () {
 		);
 	}
 });
+
+// Load plugin text domain for translations
+add_action('plugins_loaded', function () {
+	load_plugin_textdomain('atflt', false, dirname(plugin_basename(__FILE__)) . '/languages');
+});
+

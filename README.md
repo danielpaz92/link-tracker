@@ -26,10 +26,9 @@ Tracks which hyperlinks were visible **above the fold** when users visited the h
 
 ## 📊 How to View Data
 
-Go to: 
-```WordPress Admin > Tools > Above the Fold Tracker
-```
+Go to: ```WordPress Admin > Tools > Above the Fold Tracker```
 You will see a table with the following columns:
+
 - **Date**: The date of the visit.
 - **Screen Size**: The screen size of the visitor.
 - **Links**: The number of links visible above the fold.
